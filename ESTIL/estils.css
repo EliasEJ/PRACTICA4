@@ -85,3 +85,7 @@ select {
 	border-radius: 4px;
 	box-sizing: border-box;
 }
+.header {
+	margin-right: 30px;
+	padding: 1%;
+}

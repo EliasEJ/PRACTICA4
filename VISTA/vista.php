@@ -10,6 +10,17 @@
 </head>
 <body>
 <body>
+	<div class="header">
+		<div>
+			<?php
+			if (isset($_SESSION['user'])) {
+				echo "<p>Benvingut " . $_SESSION['user']['username'] . "</p>";
+			} else {
+				echo "<a href='login.php'>Login</a>";
+			}
+			?>
+		</div>
+	</div>
     <div class="contenidor">
         <h1>Articles</h1>
         <section class="articles">

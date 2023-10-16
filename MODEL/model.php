@@ -17,6 +17,21 @@ function con()
     }
 }
 
+function login(){
+    $pdo = con();
+    $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username AND password = :password");
+    $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
+    $stmt->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($user){
+        $_SESSION['user'] = $user;
+        header('Location: index.php');
+    }else{
+        echo "Error";
+    }
+}
+
 /**
  * Funció per obtenir els articles de la pàgina actual
  * @param int $offset - Valor a partir del qual es comença a mostrar els articles

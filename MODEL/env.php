@@ -3,5 +3,5 @@
     define("HOST", "localhost");
     define("USER", "root");
     define("PASS", "");
-    define("DB", "pt03_elyass_jerari");
+    define("DB", "pt04_elyass_jerari");
 ?>
