@@ -1,4 +1,11 @@
--- Elyass Jerari
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 16-10-2023 a las 17:42:53
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -11,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pt03_elyass_jerari`
+-- Base de datos: `pt04_elyass_jerari`
 --
-CREATE DATABASE IF NOT EXISTS `pt03_elyass_jerari` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pt03_elyass_jerari`;
+CREATE DATABASE IF NOT EXISTS `pt04_elyass_jerari` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pt04_elyass_jerari`;
 
 -- --------------------------------------------------------
 
@@ -23,11 +30,10 @@ USE `pt03_elyass_jerari`;
 --
 
 DROP TABLE IF EXISTS `articles`;
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL,
+  `article` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `articles`
@@ -61,6 +67,51 @@ INSERT INTO `articles` (`id`, `article`) VALUES
 (25, 'Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Feugiat scelerisque varius morbi enim. Ligula ullamcorper malesuada proin libero nunc.'),
 (26, 'Adipiscing at in tellus integer feugiat scelerisque varius.'),
 (27, 'Placerat in egestas erat imperdiet sed euismod nisi porta. A cras semper auctor neque vitae tempus quam pellentesque nec.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuaris`
+--
+
+DROP TABLE IF EXISTS `usuaris`;
+CREATE TABLE `usuaris` (
+  `id` int(11) NOT NULL,
+  `username` varchar(120) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuaris`
+--
+ALTER TABLE `usuaris`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de la tabla `usuaris`
+--
+ALTER TABLE `usuaris`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
