@@ -11,7 +11,6 @@
 <body>
 <body>
 	<div class="header">
-		<div>
 			<?php
 			if (isset($_SESSION['user'])) {
 				$user = $_SESSION['user'];
@@ -22,7 +21,6 @@
 				<button type='submit' value='Registre' onclick=\"window.location.href='VISTA/registre.php'\">Registrar-se</button>"; 
 			}
 			?>
-		</div>
 	</div>
     <div class="contenidor">
         <h1>Articles</h1>
