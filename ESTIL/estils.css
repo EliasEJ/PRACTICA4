@@ -89,3 +89,21 @@ select {
 	margin-right: 30px;
 	padding: 1%;
 }
+.login{
+	margin-top: 10%;
+	text-align: center;
+	padding: 1%;
+	font-size: 20px;
+}
+button{
+	margin-top: 10px;
+	margin-left: 50%;
+	width: 6%;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 19px;
+	padding: 10px;
+}
+button:hover{
+	cursor: pointer;
+}
+

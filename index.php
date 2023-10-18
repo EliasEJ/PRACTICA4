@@ -5,20 +5,20 @@ require 'MODEL/model.php';
 session_start();
 
 //Verificar si l' usuari ha iniciat sesió
-if (isset($_SESSION['user'])) {
-    // Si el usuario ha iniciado sesión, mostrar la página principal
-    $user = $_SESSION['user'];
-} else {
-    // Si el usuario no ha iniciado sesión, mostrar el formulario de inicio de sesión
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-        // Si el usuario ha enviado el formulario de inicio de sesión, comprobar si los datos son correctos
-        login();
-    } else {
-        // Si el usuario no ha enviado el formulario de inicio de sesión, mostrar el formulario de inicio de sesión
-        require 'VISTA/login.php';
-        exit();
-    }
-}
+// if (isset($_SESSION['user'])) {
+//     // Si el usuario ha iniciado sesión, mostrar la página principal
+//     $user = $_SESSION['user'];
+// } else {
+//     // Si el usuario no ha iniciado sesión, mostrar el formulario de inicio de sesión
+//     if (isset($_POST['username']) && isset($_POST['password'])) {
+//         // Si el usuario ha enviado el formulario de inicio de sesión, comprobar si los datos son correctos
+//         login();
+//     } else {
+//         // Si el usuario no ha enviado el formulario de inicio de sesión, mostrar el formulario de inicio de sesión
+//         require 'VISTA/login.php';
+//         exit();
+//     }
+// }
 
 // Obtenir numero de la pagina actual i comprovar que es un valor enter positiu
 $pagActual = isset($_GET['pagina']) ? abs(intval($_GET['pagina'])) : 1;
@@ -116,4 +116,5 @@ function paginacio(){
 }
 
 require 'VISTA/vista.php';
+//session_destroy();
 ?>
