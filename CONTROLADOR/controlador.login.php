@@ -1,7 +1,8 @@
 <?php
 require_once '../MODEL/model.php';
 require_once '../VISTA/login.vista.php';
-
+// Inicia la sessió
+session_start();
 function comprovar() {
     // Comprova si s'ha enviat el formulari
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

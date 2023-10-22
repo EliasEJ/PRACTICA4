@@ -17,16 +17,22 @@ function con()
     }
 }
 
-function usuariExisteix($username) {
-    $pdo = con();
-    $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username");
-    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user) {
-        return true;
-    } else {
-        return false;
+function usuariExisteix($username)
+{
+    try {
+        $pdo = con();
+        $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo "Error en la consulta: " . $e->getMessage();
     }
 }
 
@@ -53,12 +59,11 @@ function login($username, $password){
                 header('Location: logged.vista.php');
             } else {
                 // La contrasenya és incorrecta.
-                echo "Error: Contrasenya incorrecta.";
-                echo $password;
+                echo "Contrasenya incorrecta.";
             }
         } else {
             // No s'ha trobat cap usuari amb el nom d'usuari proporcionat.
-            echo "Error: Usuari no trobat.";
+            echo "Usuari no trobat.";
         }
     } catch (PDOException $e) {
         echo "Error en la consulta: " . $e->getMessage();

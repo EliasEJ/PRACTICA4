@@ -15,7 +15,6 @@
 			if (isset($_SESSION['user'])) {
 				$user = $_SESSION['user'];
 				echo "<p>Benvingut " . $user['username'] . "</p>";
-				echo "<a href='logout.php'>Logout</a>";
 			} else {
 				echo "<button type='submit' value='Login' onclick=\"window.location.href='VISTA/login.vista.php'\">Login</button> 
 				<button type='submit' value='Registre' onclick=\"window.location.href='VISTA/registre.vista.php'\">Registrar-se</button>"; 
