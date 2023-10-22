@@ -17,21 +17,35 @@ function con()
     }
 }
 
-function login(){
+function login($username, $password){
     $pdo = con();
     $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username AND password = :password");
-    $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
-    $stmt->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $password, PDO::PARAM_STR);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if($user){
         $_SESSION['user'] = $user;
-        header('Location: index.php');
     }else{
         echo "Error";
     }
 }
 
+function registre($username, $password){
+    //Obtenir connexió
+    $pdo = con();
+
+    //Insertar usuari a la base de dades
+    try {
+        $stmt = $pdo->prepare("INSERT INTO usuaris (username, password) VALUES (:username, :password)");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+        echo "Usuari registrat correctament";
+    } catch (PDOException $e) {
+        echo "Error en la consulta SQL: " . $e->getMessage();
+    }
+}
 /**
  * Funció per obtenir els articles de la pàgina actual
  * @param int $offset - Valor a partir del qual es comença a mostrar els articles

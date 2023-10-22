@@ -1,3 +1,6 @@
+<?php
+require_once '../CONTROLADOR/controlador.login.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,8 +19,7 @@
         <input type="text" name="username" id="username" required><br>
         <label for="password">Password&nbsp;</label>
         <input type="password" name="password" id="password" required><br>
-    <button type="submit" value="Login" class="bttLogin">Login</button>
-    <button type="submit" value="Tornar" onclick="window.location.href='../index.php'" class="bttRegistre">Tornar</button>
+        <button type="submit" id="boto" value="Login" class="bttRegistre" onclick="comprovar()">Login</button>
     </form>
     </div>
 </body>
