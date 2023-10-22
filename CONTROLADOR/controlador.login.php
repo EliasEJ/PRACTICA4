@@ -24,9 +24,8 @@ function comprovar() {
                 echo $error . '<br>';
             }
         } else {
-            // Si no hi ha errors, encripta la contrasenya i fa el login
-            $passEnriptada = password_hash($password, PASSWORD_DEFAULT);
-            login($username, $passEnriptada);
+            // Si no hi ha errors fa el login
+            login($username, $password);
         }
     }
 }

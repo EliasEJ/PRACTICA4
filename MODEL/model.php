@@ -31,6 +31,7 @@ function login($username, $password){
             if (password_verify($password, $user['password'])) {
                 // La contrasenya és correcta.
                 $_SESSION['user'] = $user;
+                //echo "Login correcte";
             } else {
                 // La contrasenya és incorrecta.
                 echo "Error: Contrasenya incorrecta.";
