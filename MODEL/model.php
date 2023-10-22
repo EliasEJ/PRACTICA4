@@ -121,4 +121,5 @@ function numTotalArticles($pdo)
 }
 
 $pdo = con();
+
 ?>

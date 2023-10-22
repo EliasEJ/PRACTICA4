@@ -48,6 +48,15 @@
 			</select>
 			</form>
 		</div>
+			<br>
+		<div class="crud">
+		<?php
+			if (isset($_SESSION['user'])) {
+				$user = $_SESSION['user'];
+				CRUD();
+			}
+			?>
+		</div>
 
     </div>
 </body>

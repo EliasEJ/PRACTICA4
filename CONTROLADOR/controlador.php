@@ -101,4 +101,37 @@ function paginacio(){
     echo '<li><a href="?pagina=' . $paginesTotals . '">&raquo</a></li>';
 
 }
+function CRUD (){
+    echo '<form action="" method="POST">
+    <div class="divTable" style="width: 100%;" >
+    <div class="divTableCell">
+    <label for="id">ID:
+        <input type="text" name="id" id="id">
+    </label><br>
+    <label for="article">Article: 
+        <input type="text" name="article">
+    </label><br>
+    </div>
+    <div class="divTableCell">
+    <label for="eleccio">QUÈ VOLS FER ?: </label><br>
+    <label for="inserir">
+        <input type="radio" name="eleccio" value="inserir" id="inserir"> INSERIR
+    </label><br>
+    <label for="modificar">
+        <input type="radio" name="eleccio" value="modificar"id="modificar"> MODIFICAR 
+    </label><br>
+    <label for="esborrar">
+        <input type="radio" name="eleccio" value="esborrar" id="esborrar"> ESBORRAR 
+    </label><br>
+    <label>
+        <input type="radio" name="eleccio" value="mostrar" id="mostrar"> MOSTRAR
+    </label>
+    <br><br>
+
+    <button type="submit" class="button">Enviar</button>
+    <button type="reset" class="button">Reset</button>
+    </div>
+    </div>
+    </form>';
+}
 ?>
