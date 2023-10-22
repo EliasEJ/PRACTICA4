@@ -1,5 +1,12 @@
 <?php
 // Elyass Jerari
+
+// Estableix el temps de vida de la cookie de sessió en 1 minut (60 segons) abans d'iniciar la sessió.
+$durada_sessio = 60; // 1 minut = 60 segons
+
+// Configura el temps de vida de la cookie de sessió
+session_set_cookie_params($durada_sessio);
+
 session_start();
 require 'MODEL/model.php';
 
