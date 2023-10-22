@@ -51,11 +51,12 @@
 			</form>
 		</div>
 			<br>
-		<div class="crud">
+		<div>
 		<?php
 			if (isset($_SESSION['user'])) {
 				$user = $_SESSION['user'];
 				CRUD();
+				verificarEleccio();
 			}
 			?>
 		</div>

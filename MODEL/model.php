@@ -120,6 +120,46 @@ function numTotalArticles($pdo)
     return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
 }
 
+function inserir($article){
+    $con = con();
+    try {
+        $statement = $con->prepare("INSERT INTO articles (article) VALUES (:article)");
+        $statement->bindParam(':article', $article);
+
+        $statement->execute();
+        header('Location: index.php');
+    } catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+function modificar($id, $article){
+    $con = con();
+    try {
+        $statement = $con->prepare("UPDATE articles SET article = :article WHERE id = :id");
+        $statement->bindParam(':id', $id);
+        $statement->bindParam(':article', $article);
+
+        $statement->execute();
+        header('Location: index.php');
+    } catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+function esborrar($id){
+    $con = con();
+    try {
+        $statement = $con->prepare("DELETE FROM articles WHERE id = :id");
+        $statement->bindParam(':id', $id);
+
+        $statement->execute();
+        header('Location: index.php');
+    } catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+}
+
 $pdo = con();
 
 ?>

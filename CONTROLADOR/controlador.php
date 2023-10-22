@@ -8,6 +8,7 @@ session_set_cookie_params(60);
 session_start();
 
 require 'MODEL/model.php';
+require_once 'CONTROLADOR/controladorCRUD.php';
 
 //Verificar si l' usuari ha iniciat sesió
 if (isset($_SESSION['user'])) {
@@ -108,8 +109,10 @@ function paginacio(){
 
 }
 function CRUD (){
-    echo '<form action="" method="POST">
-    <div class="divTable" style="width: 100%;" >
+    echo '
+    <div>
+    <form action="" method="POST">
+    <div class="divTable">
     <div class="divTableCell">
     <label for="id">ID:
         <input type="text" name="id" id="id">
@@ -133,11 +136,13 @@ function CRUD (){
         <input type="radio" name="eleccio" value="mostrar" id="mostrar"> MOSTRAR
     </label>
     <br><br>
-
+    
     <button type="submit" class="button">Enviar</button>
     <button type="reset" class="button">Reset</button>
     </div>
     </div>
+    </div>
     </form>';
+    
 }
 ?>
