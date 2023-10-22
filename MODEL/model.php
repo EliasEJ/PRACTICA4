@@ -17,6 +17,24 @@ function con()
     }
 }
 
+function usuariExisteix($username) {
+    $pdo = con();
+    $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username");
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Funció per fer el login
+ * @param string $username - Nom d'usuari
+ * @param string $password - Contrasenya
+ */
 function login($username, $password){
     try {
         $pdo = con();
@@ -32,6 +50,7 @@ function login($username, $password){
                 // La contrasenya és correcta.
                 $_SESSION['user'] = $user;
                 //echo "Login correcte";
+                header('Location: logged.vista.php');
             } else {
                 // La contrasenya és incorrecta.
                 echo "Error: Contrasenya incorrecta.";
@@ -47,7 +66,11 @@ function login($username, $password){
 }
 
 
-
+/**
+ * Funció per registrar un usuari
+ * @param string $username - Nom d'usuari
+ * @param string $password - Contrasenya
+ */
 function registre($username, $password){
     //Obtenir connexió
     $pdo = con();

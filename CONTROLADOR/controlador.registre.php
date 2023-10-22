@@ -22,6 +22,9 @@ function comprovar() {
             $errors[] = "Les contrasenyes no coincideixen.";
         }
 
+        // Comprovar si l'usuari ja existeix
+        usuariExisteix($username) ? $errors[] = "L'usuari ja existeix." : null;
+
         // Si hi ha errors, els mostra i acaba
         if (!empty($errors)) {
             foreach ($errors as $error) {
@@ -34,6 +37,7 @@ function comprovar() {
         }
     }
 }
+
 function username() { if (isset($_POST["username"])) {return $_POST["username"];} }
 
 function password() {if (isset($_POST["password1"])) {return $_POST["password1"];} }
