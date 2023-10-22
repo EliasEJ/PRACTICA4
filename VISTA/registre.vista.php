@@ -23,7 +23,7 @@ require_once '../CONTROLADOR/controlador.registre.php'
         <label for="password2">Repeteix la contrasenya</label><br>
         <input type="password" name="password2"><br><br>
         <button type="submit" id="boto" class="bttRegistre">Registre</button>
-        <button type='reset' value='Tornar' onclick="window.location.href='../index.php'">Login</button>
+        <button type='reset' value='Tornar' onclick="window.location.href='../index.php'" class="bttRegistre">Tornar</button>
         <br>
         <?php comprovar()?>
     </form>
