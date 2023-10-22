@@ -16,9 +16,9 @@ require_once '../CONTROLADOR/controlador.login.php';
     <div class="login">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="centrarFormulari">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" required><br>
+        <input type="text" name="username" id="username" value = "<?php echo username() ?>" required><br>
         <label for="password">Password&nbsp;</label>
-        <input type="password" name="password" id="password" required><br>
+        <input type="password" name="password" id="password" value = "<?php echo password() ?>" required><br>
         <button type="submit" id="boto" value="Login" class="bttRegistre">Login</button>
         <button type='reset' value='Tornar' onclick="window.location.href='../index.php'" class="bttRegistre">Tornar</button>
         <br>

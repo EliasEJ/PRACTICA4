@@ -34,5 +34,10 @@ function comprovar() {
         }
     }
 }
+function username() { if (isset($_POST["username"])) {return $_POST["username"];} }
+
+function password() {if (isset($_POST["password1"])) {return $_POST["password1"];} }
+
+function password2() {if (isset($_POST["password2"])) {return $_POST["password2"];} }
 
 ?>

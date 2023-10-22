@@ -17,11 +17,11 @@ require_once '../CONTROLADOR/controlador.registre.php'
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="centrarFormulari">
         <label for="username" id="username">Username</label>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" value = "<?php echo username() ?>" required><br>
         <label for="password1">Contrasenya</label><br>
-        <input type="password" name="password1"><br>
+        <input type="password" name="password1" value = "<?php echo password() ?>" required><br>
         <label for="password2">Repeteix la contrasenya</label><br>
-        <input type="password" name="password2"><br><br>
+        <input type="password" name="password2" value = "<?php echo password2() ?>" required><br><br>
         <button type="submit" id="boto" class="bttRegistre">Registre</button>
         <button type='reset' value='Tornar' onclick="window.location.href='../index.php'" class="bttRegistre">Tornar</button>
         <br>
