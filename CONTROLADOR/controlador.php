@@ -136,9 +136,6 @@ function CRUD (){
     <label for="esborrar">
         <input type="radio" name="eleccio" value="esborrar" id="esborrar"> ESBORRAR 
     </label><br>
-    <label>
-        <input type="radio" name="eleccio" value="mostrar" id="mostrar"> MOSTRAR
-    </label>
     <br><br>
     
     <button type="submit" class="button">Enviar</button>
