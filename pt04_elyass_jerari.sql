@@ -76,7 +76,6 @@ INSERT INTO `articles` (`id`, `article`) VALUES
 
 DROP TABLE IF EXISTS `usuaris`;
 CREATE TABLE `usuaris` (
-  `id` int(11) NOT NULL,
   `username` varchar(120) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

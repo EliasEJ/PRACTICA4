@@ -31,7 +31,6 @@ function comprovar() {
             // Si no hi ha errors, encripta la contrasenya i registra l'usuari
             $passEnriptada = password_hash($password1, PASSWORD_DEFAULT);
             registre($username, $passEnriptada);
-            echo 'Registro exitoso.';
         }
     }
 }

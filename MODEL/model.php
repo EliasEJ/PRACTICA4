@@ -18,18 +18,34 @@ function con()
 }
 
 function login($username, $password){
-    $pdo = con();
-    $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username AND password = :password");
-    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-    $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if($user){
-        $_SESSION['user'] = $user;
-    }else{
-        echo "Error";
+    try {
+        $pdo = con();
+        $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // S'ha trobat un usuari amb el nom d'usuari proporcionat.
+            // Verificar la contrasenya.
+            if (password_verify($password, $user['password'])) {
+                // La contrasenya és correcta.
+                $_SESSION['user'] = $user;
+            } else {
+                // La contrasenya és incorrecta.
+                echo "Error: Contrasenya incorrecta.";
+                echo $password;
+            }
+        } else {
+            // No s'ha trobat cap usuari amb el nom d'usuari proporcionat.
+            echo "Error: Usuari no trobat.";
+        }
+    } catch (PDOException $e) {
+        echo "Error en la consulta: " . $e->getMessage();
     }
 }
+
+
 
 function registre($username, $password){
     //Obtenir connexió
