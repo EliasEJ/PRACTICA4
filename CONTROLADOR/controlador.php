@@ -108,6 +108,10 @@ function paginacio(){
     echo '<li><a href="?pagina=' . $paginesTotals . '">&raquo</a></li>';
 
 }
+
+/**
+ * Funció per printar formulari CRUD
+ */
 function CRUD (){
     echo '
     <div>

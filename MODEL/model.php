@@ -17,8 +17,13 @@ function con()
     }
 }
 
+/**
+ * Funció per comprovar si l'usuari existeix
+ * @param string $username - Nom d'usuari
+ */
 function usuariExisteix($username)
 {
+    // Comprovar si l'usuari ja existeix
     try {
         $pdo = con();
         $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE username = :username");
@@ -120,6 +125,10 @@ function numTotalArticles($pdo)
     return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
 }
 
+/**
+ * Funció per inserir un article
+ * @param string $article - Article
+ */
 function inserir($article){
     $con = con();
     try {
@@ -133,6 +142,10 @@ function inserir($article){
     }
 }
 
+/**
+ * Funció per modificar un article
+ * @param int $id - Id de l'article
+ */
 function modificar($id, $article){
     $con = con();
     try {
@@ -147,6 +160,10 @@ function modificar($id, $article){
     }
 }
 
+/**
+ * Funció per esborrar un article
+ * @param int $id - Id de l'article
+ */
 function esborrar($id){
     $con = con();
     try {

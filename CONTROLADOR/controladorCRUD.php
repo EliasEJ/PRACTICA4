@@ -8,7 +8,6 @@
             $id = htmlspecialchars($_POST['id']);
             $article = htmlspecialchars($_POST['article']);
             $eleccio = $_POST['eleccio']; 
-            $con = con();           
 
             //Comprobamos si se necesita hacer alguna verificación de los datos
             if($eleccio == "inserir" || $eleccio == "modificar" || $eleccio == "esborrar"){

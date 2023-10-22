@@ -1,4 +1,5 @@
 <?php
+// Elyass Jerari
 require_once '../CONTROLADOR/controlador.registre.php'
 ?>
 <!DOCTYPE html>

@@ -1,9 +1,15 @@
 <?php
+//Elyass Jerari
+
 require_once '../MODEL/model.php';
 require_once '../VISTA/registre.vista.php';
 
 // Inicia la sessió
 session_start();
+
+/**
+ * Funció per fer les comprovacions del formulari de registre
+ */
 function comprovar() {
     // Comprova si s'ha enviat el formulari
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -40,10 +46,19 @@ function comprovar() {
     }
 }
 
+/**
+ * Funció per mantenir les dades del formulari en cas d'error
+ */
 function username() { if (isset($_POST["username"])) {return $_POST["username"];} }
 
+/**
+ * Funció per mantenir les dades del formulari en cas d'error
+ */
 function password() {if (isset($_POST["password1"])) {return $_POST["password1"];} }
 
+/**
+ * Funció per mantenir les dades del formulari en cas d'error
+ */
 function password2() {if (isset($_POST["password2"])) {return $_POST["password2"];} }
 
 ?>
