@@ -56,7 +56,7 @@ function login($username, $password){
                 // La contrasenya és correcta.
                 $_SESSION['user'] = $user;
                 //echo "Login correcte";
-                header('Location: logged.vista.php');
+                header('Location: ../index.php');
             } else {
                 // La contrasenya és incorrecta.
                 echo "Contrasenya incorrecta.";
